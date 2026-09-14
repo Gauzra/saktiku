@@ -21,8 +21,8 @@ export const BusinessProvider = ({ children }) => {
 
     useEffect(() => {
         const path = location.pathname;
-        // Jangan redirect jika berada di halaman login atau register
-        if (path === '/login' || path === '/register') {
+        // Halaman publik yang tidak membutuhkan login
+        if (path === '/' || path === '/login' || path === '/register') {
             return;
         }
 
