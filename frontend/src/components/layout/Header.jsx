@@ -9,18 +9,18 @@ function Header({ toggleSidebar }) {
 
     const getTitle = () => {
         const path = location.pathname;
-        if (path === "/") return "Dashboard";
-        if (path ==="/atur-saldo-awal") return "Atur Saldo Awal";   
-        if (path === "/transaction") return "Transaksi";
-        if (path === "/siklus-akuntansi/jurnal-umum") return "Jurnal Umum";
-        if (path === "/siklus-akuntansi/buku-besar") return "Buku Besar";
-        if (path === "/siklus-akuntansi/neraca-saldo") return "Neraca Saldo";
-        if (path === "/siklus-akuntansi/jurnal-penyesuaian") return "Jurnal Penyesuaian";
-        if (path === "/laporan/laba-rugi") return "Laporan Laba Rugi";
-        if (path === "/laporan/neraca") return "Laporan Neraca";
-        if (path === "/laporan/perubahan-modal") return "Laporan Perubahan Modal";
-        if (path === "/laporan/arus-kas") return "Laporan Arus Kas";
-        if (path === "/profile") return "Profil Pengguna";
+        if (path === "/app") return "Dashboard";
+        if (path === "/app/atur-saldo-awal") return "Atur Saldo Awal";   
+        if (path === "/app/transaction") return "Transaksi";
+        if (path === "/app/siklus-akuntansi/jurnal-umum") return "Jurnal Umum";
+        if (path === "/app/siklus-akuntansi/buku-besar") return "Buku Besar";
+        if (path === "/app/siklus-akuntansi/neraca-saldo") return "Neraca Saldo";
+        if (path === "/app/siklus-akuntansi/jurnal-penyesuaian") return "Jurnal Penyesuaian";
+        if (path === "/app/laporan/laba-rugi") return "Laporan Laba Rugi";
+        if (path === "/app/laporan/neraca") return "Laporan Neraca";
+        if (path === "/app/laporan/perubahan-modal") return "Laporan Perubahan Modal";
+        if (path === "/app/laporan/arus-kas") return "Laporan Arus Kas";
+        if (path === "/app/profile") return "Profil Pengguna";
     };
 
     const handleLogout = () => {

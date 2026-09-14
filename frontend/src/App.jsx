@@ -19,6 +19,7 @@ import Profile from "./pages/Profile/Profile";
 import { GuideProvider } from "./context/GuideContext";
 import OpeningBalance from "./pages/OpeningBalance/OpeningBalance";
 import Panduan from "./pages/Panduan/Panduan";
+import Landing from "./pages/Landing/Landing";
 
 function App() {
   return (
@@ -26,10 +27,11 @@ function App() {
       <BusinessProvider>
         <GuideProvider>
           <Routes>
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/"
+            path="/app"
             element={
               <ProtectedRoute>
                 <AppLayout />

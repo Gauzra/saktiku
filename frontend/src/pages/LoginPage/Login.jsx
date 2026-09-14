@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import api from "../../services/Api";
 import "./Login.css";
 
@@ -22,7 +23,7 @@ function Login() {
 
         if (token) {
             localStorage.setItem("token", token);
-            navigate("/");
+            navigate("/app");
         }
 
         const renderGoogleButton = () => {
@@ -74,7 +75,7 @@ function Login() {
             setLoading(true);
             const res = await api.post("/auth/google", { tokenId: response.credential });
             localStorage.setItem("token", res.data.token);
-            navigate("/");
+            navigate("/app");
         } catch (err) {
             console.error("Google login error:", err);
             alert("Gagal login dengan Google");
@@ -97,7 +98,7 @@ function Login() {
         try {
             const res = await api.post("/auth/login", form);
             localStorage.setItem("token", res.data.token);
-            navigate("/");
+            navigate("/app");
         } catch (err) {
             alert("Email atau password salah");
         } finally {
@@ -110,6 +111,10 @@ function Login() {
             <div className="aurora-bg"></div>
             <div className="blob blob-1"></div>
             <div className="blob blob-2"></div>
+
+            <Link to="/" className="back-home-btn">
+                <FaArrowLeft /> Kembali ke Beranda
+            </Link>
 
             <div className="login-left">
                 <h1>SAKTIKU</h1>

@@ -10,6 +10,7 @@ const reportsRoutes = require("./routes/reports");
 const businessRoutes = require("./routes/business");
 const usersRoutes = require("./routes/users");  // ← INI YANG KURANG!
 const accountingRoutes = require("./routes/accounting");
+const reviewsRoutes = require("./routes/reviews");
 
 const path = require("path");
 const authMiddleware = require("./middleware/auth.middleware");
@@ -38,6 +39,7 @@ app.use("/api/reports", reportsRoutes);
 app.use("/api/business", businessRoutes);
 app.use("/api/users", usersRoutes);  // ← SEKARANG SUDAH TERDEFINISI
 app.use("/api/accounting", accountingRoutes);
+app.use("/api/reviews", reviewsRoutes);
 
 // Protected test route
 app.get("/api/me", authMiddleware, (req, res) => {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import api from "../../services/Api";
 import "./Register.css";
 
@@ -58,7 +59,7 @@ function Register() {
             };
             const res = await api.post("/auth/register", payload);
             localStorage.setItem("token", res.data.token);
-            navigate("/");
+            navigate("/app");
         } catch (err) {
             const msg = err.response?.data?.message || "Terjadi kesalahan, coba lagi.";
             setError(msg);
@@ -72,6 +73,10 @@ function Register() {
             <div className="aurora-bg"></div>
             <div className="blob blob-1"></div>
             <div className="blob blob-2"></div>
+
+            <Link to="/" className="back-home-btn">
+                <FaArrowLeft /> Kembali ke Beranda
+            </Link>
 
             {/* Left Panel */}
             <div className="register-left">

@@ -103,14 +103,14 @@ function Sidebar({ isOpen, closeSidebar }) {
                 <div className="sidebar-divider"></div>
 
                 <nav className="sidebar-menu">
-                    <NavLink to="/" end className="menu-item" onClick={closeSidebar}>
+                    <NavLink to="/app" end className="menu-item" onClick={closeSidebar}>
                         Dashboard
                     </NavLink>
 
-                    <NavLink to="/atur-saldo-awal" className="menu-item" onClick={closeSidebar}>
+                    <NavLink to="/app/atur-saldo-awal" className="menu-item" onClick={closeSidebar}>
                         Atur Saldo Awal</NavLink>
 
-                    <NavLink to="/transaction" className="menu-item" onClick={closeSidebar}>
+                    <NavLink to="/app/transaction" className="menu-item" onClick={closeSidebar}>
                         Transaksi
                     </NavLink>
 
@@ -130,28 +130,28 @@ function Sidebar({ isOpen, closeSidebar }) {
                     {openAccountingCycle && (
                         <div className="submenu">
                             <NavLink
-                                to="/siklus-akuntansi/jurnal-umum"
+                                to="/app/siklus-akuntansi/jurnal-umum"
                                 className="submenu-item"
                                 onClick={closeSidebar}
                             >
                                 Jurnal Umum
                             </NavLink>
                             <NavLink
-                                to="/siklus-akuntansi/buku-besar"
+                                to="/app/siklus-akuntansi/buku-besar"
                                 className="submenu-item"
                                 onClick={closeSidebar}
                             >
                                 Buku Besar
                             </NavLink>
                             <NavLink
-                                to="/siklus-akuntansi/neraca-saldo"
+                                to="/app/siklus-akuntansi/neraca-saldo"
                                 className="submenu-item"
                                 onClick={closeSidebar}
                             >
                                 Neraca Saldo
                             </NavLink>
                             <NavLink
-                                to="/siklus-akuntansi/jurnal-penyesuaian"
+                                to="/app/siklus-akuntansi/jurnal-penyesuaian"
                                 className="submenu-item"
                                 onClick={closeSidebar}
                             >
@@ -175,23 +175,23 @@ function Sidebar({ isOpen, closeSidebar }) {
 
                     {openReports && (
                         <div className="submenu">
-                            <NavLink to="/laporan/laba-rugi" className="submenu-item" onClick={closeSidebar}>
+                            <NavLink to="/app/laporan/laba-rugi" className="submenu-item" onClick={closeSidebar}>
                                 Laba Rugi
                             </NavLink>
-                            <NavLink to="/laporan/perubahan-modal" className="submenu-item" onClick={closeSidebar}>
+                            <NavLink to="/app/laporan/perubahan-modal" className="submenu-item" onClick={closeSidebar}>
                                 Perubahan Modal
                             </NavLink>
-                            <NavLink to="/laporan/neraca" className="submenu-item" onClick={closeSidebar}>
+                            <NavLink to="/app/laporan/neraca" className="submenu-item" onClick={closeSidebar}>
                                 Neraca
                             </NavLink>
 
-                            <NavLink to="/laporan/arus-kas" className="submenu-item" onClick={closeSidebar}>
+                            <NavLink to="/app/laporan/arus-kas" className="submenu-item" onClick={closeSidebar}>
                                 Arus Kas
                             </NavLink>
                         </div>
                     )}
 
-                    <NavLink to="/profile" className="menu-item" onClick={closeSidebar}>
+                    <NavLink to="/app/profile" className="menu-item" onClick={closeSidebar}>
                         Profil
                     </NavLink>
                     

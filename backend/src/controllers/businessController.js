@@ -112,7 +112,29 @@ const setupUserBusiness = async (req, res) => {
     }
 };
 
+// =============================================
+// GET JUMLAH UMKM TERDAFTAR (PUBLIC)
+// =============================================
+const getUmkmCount = async (req, res) => {
+    try {
+        const [rows] = await db.execute(
+            'SELECT COUNT(*) AS count FROM tenants'
+        );
+        res.json({
+            success: true,
+            data: { count: rows[0].count }
+        });
+    } catch (err) {
+        console.error('Get UMKM count error:', err);
+        res.status(500).json({
+            success: false,
+            message: 'Gagal mengambil jumlah UMKM terdaftar'
+        });
+    }
+};
+
 module.exports = {
     getBusinessTypes,
-    setupUserBusiness
+    setupUserBusiness,
+    getUmkmCount
 };
