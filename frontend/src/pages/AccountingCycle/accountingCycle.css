@@ -1,0 +1,684 @@
+/* Minimal, professional styling for Accounting Cycle pages */
+
+.ac-container {
+    padding: 20px;
+    color: #0f172a;
+}
+
+.ac-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ac-header>* {
+    min-width: 0;
+}
+
+.ac-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.ac-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.ac-filter input[type="date"] {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 13px;
+    max-width: 160px;
+}
+
+.ac-filter-sep {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.ac-title {
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ac-subtitle {
+    margin: 6px 0 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.ac-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.ac-empty {
+    padding: 10px 0;
+}
+
+.ac-muted {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.ac-table-wrap {
+    width: 100%;
+    overflow: auto;
+}
+
+.ac-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.ac-table th {
+    text-align: left;
+    padding: 12px 10px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.ac-table td {
+    padding: 10px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a;
+    vertical-align: top;
+}
+
+.ac-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.ac-text-right {
+    text-align: right;
+}
+
+/* Header <th> uses .ac-table th { text-align: left } which beats .ac-text-right alone */
+.ac-table th.ac-text-right {
+    text-align: right;
+}
+
+.ac-mono {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Trial balance */
+.ac-tb-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ac-tb-summary-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    padding: 12px 12px;
+}
+
+.ac-tb-summary-item--status {
+    background: #ffffff;
+}
+
+.ac-tb-summary-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.ac-tb-summary-value {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ac-tb-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ac-tb-group-title {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ac-tb-table {
+    table-layout: auto;
+    /* Mengubah dari fixed agar min-width berfungsi */
+}
+
+.ac-tb-table th,
+.ac-tb-table td {
+    vertical-align: middle;
+}
+
+/* Kolom nominal: lebar tetap + rata kanan konsisten (header & isi) */
+.ac-tb-table th:nth-child(3),
+.ac-tb-table th:nth-child(4),
+.ac-tb-table td:nth-child(3),
+.ac-tb-table td:nth-child(4) {
+    min-width: 170px;
+    /* Menambah lebar minimal agar nominal tidak berdekatan */
+    text-align: right;
+    white-space: nowrap;
+}
+
+.ac-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ac-ledger-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ac-ledger-section-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ac-ledger-account {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.ac-ledger-account-header {
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ac-ledger-account-title {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.ac-ledger-account-code {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ac-ledger-account-name {
+    color: #334155;
+    font-weight: 600;
+}
+
+.ac-ledger-account-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Ledger table (rapi, mudah dibaca) */
+.ac-ledger-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ac-ledger-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 160px 160px;
+    gap: 12px;
+    align-items: start;
+}
+
+.ac-ledger-row--head {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ac-ledger-row--data {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.ac-ledger-txBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ac-ledger-txHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.ac-ledger-txHeader-left {
+    min-width: 0;
+}
+
+.ac-ledger-txDate {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ac-ledger-txDesc {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.ac-ledger-pill {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Column helpers (semantic) */
+.ac-ledger-col-date {
+    color: #0f172a;
+}
+
+.ac-ledger-col-desc {
+    color: #0f172a;
+    min-width: 0;
+}
+
+.ac-ledger-col-debit,
+.ac-ledger-col-credit {
+    color: #0f172a;
+}
+
+/* Responsive: stack layout and avoid confusing scroll */
+@media (max-width: 900px) {
+    .ac-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ac-filter {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .ac-filter input[type="date"] {
+        max-width: none;
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .ac-ledger-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "desc desc"
+            "debit credit";
+    }
+
+    .ac-ledger-row--head {
+        display: none;
+    }
+
+    .ac-ledger-col-date {
+        display: none;
+    }
+
+    .ac-ledger-col-desc {
+        grid-area: desc;
+    }
+
+    .ac-ledger-col-debit {
+        grid-area: debit;
+    }
+
+    .ac-ledger-col-credit {
+        grid-area: credit;
+    }
+
+    .ac-container {
+        padding: 16px;
+    }
+
+    .ac-tb-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .ac-tb-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.ac-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.ac-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+    overflow: hidden;
+    animation: ac-modal-fade 0.3s ease;
+}
+
+@keyframes ac-modal-fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ac-modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+}
+
+.ac-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.ac-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.ac-form {
+    padding: 20px;
+}
+
+.ac-form-group {
+    margin-bottom: 16px;
+}
+
+.ac-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.ac-form-group input,
+.ac-form-group select {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #0f172a;
+    transition: all 0.2s;
+}
+
+.ac-form-group input:focus,
+.ac-form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ac-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.ac-modal-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    background: #f8fafc;
+}
+
+/* Button variants */
+.ac-btn-primary {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ac-btn-primary:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+.ac-btn-primary:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ac-btn-secondary {
+    background: #ffffff;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ac-btn-secondary:hover {
+    background: #f1f5f9;
+}
+
+.ac-btn-danger {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ac-btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.ac-export-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.ac-btn-export-excel {
+    background: #15332c;
+    /* Emerald 700 */
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
+}
+
+.ac-btn-export-excel:hover {
+    background: #15332c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.2);
+}
+
+.ac-btn-export-pdf {
+    background: #15332c;
+    /* Rose 700 */
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(190, 18, 60, 0.15);
+}
+
+.ac-btn-export-pdf:hover {
+    background: #15332c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(190, 18, 60, 0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .ac-container {
+        padding: 10px;
+    }
+
+    .ac-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .ac-title {
+        font-size: 18px;
+    }
+
+    .ac-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .ac-filter input[type="date"] {
+        flex: 1;
+        max-width: none;
+    }
+
+    .ac-card {
+        padding: 15px;
+        overflow-x: hidden;
+        /* Mencegah card melar */
+    }
+
+    .ac-table-wrap {
+        overflow-x: auto;
+    }
+
+    .ac-ledger-account-header {
+        padding: 10px !important;
+    }
+
+    .ac-ledger-account-title strong {
+        font-size: 0.95rem !important;
+    }
+
+    .ac-export-btns {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .ac-btn-export-excel,
+    .ac-btn-export-pdf {
+        flex: 1;
+        justify-content: center;
+    }
+}

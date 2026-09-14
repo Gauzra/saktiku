@@ -1,0 +1,651 @@
+/* src/pages/Transaction/transactions.css */
+
+body {
+    background: #f4f6f9;
+}
+
+.transaction-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: hidden; /* Mencegah elemen dalam mendorong halaman ke samping */
+}
+
+.transaction-page h1 {
+    margin-bottom: 24px;
+    color: #333;
+    font-size: 28px;
+    word-break: break-word; /* Mencegah judul panjang merusak layout */
+}
+
+.transaction-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+}
+
+/* Form Column */
+.form-column {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    max-width: 100%; /* Kunci lebar */
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+/* List Column */
+.list-column {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    max-width: 100%; /* Kunci lebar */
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+/* Form Styles */
+.transaction-form h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #235338;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.opening-balance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Toggle Sisi Saldo Awal */
+.opening-side-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.side-btn {
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+.side-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.debit-btn {
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.debit-btn.active {
+    background: #111827;
+    border-color: #111827;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.credit-btn {
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.credit-btn.active {
+    background: #111827;
+    border-color: #111827;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Type Buttons */
+.type-group {
+    margin-bottom: 25px;
+}
+
+.type-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.type-btn {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.type-btn.income {
+    color: #2e7d32;
+}
+
+.type-btn.income.active {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+}
+
+.type-btn.expense {
+    color: #c62828;
+}
+
+.type-btn.expense.active {
+    background: #f44336;
+    border-color: #f44336;
+    color: white;
+}
+
+/* Amount Input */
+.amount-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.currency-prefix {
+    padding: 12px;
+    background: #f5f5f5;
+    border-right: 1px solid #ddd;
+    font-weight: 600;
+    color: #666;
+}
+
+.amount-field {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.amount-field:focus {
+    outline: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #235338, #235338);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.25);
+}
+
+/* Transaction List */
+.transaction-list {
+    margin-top: 20px;
+}
+
+.transaction-list h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Simple Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 16px;
+    max-width: 100%;
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.modern-table th {
+    background: #f8fafc;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    font-size: 12px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.modern-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #edf2f7;
+    color: #334155;
+}
+
+.modern-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Summary Cards */
+.transaction-summary {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.summary-card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #f1f1f1;
+}
+
+.summary-card.income {
+    background: #e8f5e9;
+}
+
+.summary-card.expense {
+    background: #ffebee;
+}
+
+.summary-card.balance {
+    background: #e3f2fd;
+}
+
+.summary-label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-card.income .summary-value {
+    color: #2e7d32;
+}
+
+.summary-card.expense .summary-value {
+    color: #c62828;
+}
+
+.summary-card.balance .summary-value {
+    color: #1565c0;
+}
+
+/* ===== FITUR BARU: FILTER, EXPORT, DAN ACTION BUTTONS ===== */
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 100%;
+    overflow-x: auto; /* Jika filter kepanjangan, bisa digeser sedikit */
+    padding-bottom: 5px;
+}
+
+.filter-dates {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-btn:hover {
+    background: #45a049;
+}
+
+.filter-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.reset-btn {
+    padding: 8px 16px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reset-btn:hover {
+    background: #da190b;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.export-excel-btn {
+    padding: 8px 16px;
+    background: #15332c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.export-excel-btn:hover {
+    background: #0e221d;
+}
+
+.export-pdf-btn {
+    padding: 8px 16px;
+    background: #15332c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.export-pdf-btn:hover {
+    background: #0e221d;
+}
+
+/* Action Buttons dengan icon vector */
+.action-cell {
+    text-align: center;
+    min-width: 80px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 6px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.edit-btn {
+    color: #1976d2;
+    background: #e3f2fd;
+}
+
+.edit-btn:hover {
+    background: #bbdefb;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    color: #d32f2f;
+    background: #ffebee;
+}
+
+.delete-btn:hover {
+    background: #ffcdd2;
+    transform: translateY(-2px);
+}
+
+.action-btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-dates {
+        justify-content: space-between;
+    }
+
+    .export-buttons {
+        justify-content: flex-end;
+    }
+
+    .action-btn {
+        font-size: 16px;
+        margin: 0 4px;
+        padding: 4px;
+    }
+}
+
+/* Tambahkan di file CSS Anda */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-delete-all {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-delete-all:hover {
+    background: #c82333;
+}
+
+/* Modal khusus untuk hapus semua */
+.delete-modal {
+    max-width: 450px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.warning-icon {
+    color: #dc3545;
+    font-size: 24px;
+}
+
+.warning-text {
+    color: #dc3545;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .transaction-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .transaction-page {
+        padding: 10px;
+    }
+
+    .transaction-page h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .btn-delete-all {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .filter-dates {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 kolom sejajar */
+        gap: 10px;
+    }
+
+    .filter-dates span {
+        display: none; /* Sembunyikan kata "s/d" di mobile agar tidak berantakan */
+    }
+
+    .filter-btn, .reset-btn {
+        grid-column: span 1; /* Masing-masing 1 kolom */
+        width: 100%;
+    }
+
+    .export-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .export-excel-btn, .export-pdf-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .modern-table {
+        min-width: 850px;
+    }
+}
+
+@media (max-width: 480px) {
+    .opening-side-toggle, .type-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .form-column, .list-column {
+        padding: 15px 12px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+}

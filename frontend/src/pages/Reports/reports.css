@@ -1,0 +1,536 @@
+/* src/pages/Reports/reports.css */
+
+:root {
+    --rp-bg: #ffffff;
+    --rp-surface: #ffffff;
+    --rp-surface-2: #f8fafc; /* slate-50 */
+    --rp-border: #e2e8f0; /* slate-200 */
+    --rp-text: #0f172a; /* slate-900 */
+    --rp-muted: #64748b; /* slate-500 */
+    --rp-accent: #000000; /* indigo-600 */
+    --rp-accent-2: #000000; /* violet-600 */
+    --rp-warn: #b45309; /* amber-700 (no red/green) */
+    --rp-warn-bg: #fffbeb; /* amber-50 */
+}
+
+.reports-container {
+    padding: 20px;
+    color: var(--rp-text);
+}
+
+.reports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reports-filter input {
+    padding: 8px 12px;
+    border: 1px solid var(--rp-border);
+    border-radius: 6px;
+    margin: 0 5px;
+    background: var(--rp-surface);
+    color: var(--rp-text);
+}
+
+.report-card {
+    background: var(--rp-surface);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--rp-border);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.report-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid;
+}
+
+/* WARNA UNTUK TITLE (NETRAL/PROFESSIONAL, TANPA MERAH/HIJAU) */
+.income-title {
+    color: var(--rp-text);
+    border-bottom-color: var(--rp-accent);
+}
+
+.expense-title {
+    color: var(--rp-text);
+    border-bottom-color: var(--rp-accent-2);
+}
+
+/* ===== NERACA STYLES - SEMUA HITAM ===== */
+.asset-title {
+    color: #333 !important;
+    border-bottom-color: #333 !important;
+}
+
+.liability-title {
+    color: #333 !important;
+    border-bottom-color: #333 !important;
+}
+
+.equity-title {
+    color: #333 !important;
+    border-bottom-color: #333 !important;
+}
+
+.total-title {
+    color: #333 !important;
+    border-bottom-color: #333 !important;
+}
+
+/* Warna teks nominal - HITAM semua */
+.asset-text {
+    color: #333 !important;
+    font-weight: 600;
+}
+
+.liability-text {
+    color: #333 !important;
+    font-weight: 600;
+}
+
+.equity-text {
+    color: #333 !important;
+    font-weight: 600;
+}
+
+.total-text {
+    color: #333 !important;
+    font-weight: 600;
+}
+
+/* Hover effect - cukup abu-abu */
+.asset-row:hover,
+.liability-row:hover,
+.equity-row:hover {
+    background-color: #f5f5f5;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-table th {
+    text-align: left;
+    padding: 12px;
+    background: var(--rp-surface-2);
+    border-bottom: 1px solid var(--rp-border);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.report-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rp-border);
+}
+
+/* Hover baris (subtle, tanpa merah/hijau) */
+.income-row:hover {
+    background-color: #eef2ff; /* indigo-50 */
+}
+
+.expense-row:hover {
+    background-color: #f5f3ff; /* violet-50 */
+}
+
+/* Warna teks nominal (tanpa merah/hijau) */
+.income-text {
+    color: #000000 !important; /* indigo-800 */
+    font-weight: 600;
+}
+
+.expense-text {
+    color: #000000 !important; /* violet-800 */
+    font-weight: 600;
+}
+
+/* Total row (subtle) */
+.income-total {
+    background-color: #eef2ff;
+    font-weight: bold;
+}
+
+.income-total td {
+    color: #000000;
+}
+
+.expense-total {
+    background-color: #f5f3ff;
+    font-weight: bold;
+}
+
+.expense-total td {
+    color: #000000;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* LABA BERSIH - WARNA SEMANTIK */
+.profit-loss-summary {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.profit-loss-summary.profit {
+    background-color: #f0fdf4; /* green-50 */
+    border-color: #bbf7d0; /* green-200 */
+    color: #166534; /* green-800 */
+}
+
+.profit-loss-summary.loss {
+    background-color: #fef2f2; /* red-50 */
+    border-color: #fecaca; /* red-200 */
+    color: #991b1b; /* red-800 */
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.summary-label {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-value {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.profit .summary-value {
+    color: #15803d; /* green-700 */
+}
+
+.loss .summary-value {
+    color: #dc2626; /* red-600 */
+}
+
+.loss-badge {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+    padding: 4px 10px;
+    background: #dc2626;
+    color: white;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+/* Balance Indicator */
+.balance-indicator {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid;
+}
+
+.balance-indicator.balanced {
+    background-color: #eef2ff;
+    border-color: #c7d2fe; /* indigo-200 */
+}
+
+.balance-indicator.unbalanced {
+    background-color: var(--rp-warn-bg);
+    border-color: #fed7aa; /* orange-200 */
+}
+
+.indicator-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.indicator-icon {
+    font-size: 24px;
+}
+
+.balance-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comparison-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.comparison-item .label {
+    color: #666;
+    font-size: 14px;
+}
+
+.comparison-item .value {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.comparison-item.difference {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 2px dashed var(--rp-border);
+}
+
+.text-success {
+    color: #000000;
+}
+
+.text-danger {
+    color: var(--rp-warn);
+}
+
+.report-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.date-info {
+    color: #999;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Sub section */
+.sub-section-title {
+    font-size: 14px;
+    color: #666;
+    margin: 15px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid #999;
+}
+
+.code-cell {
+    color: #999;
+    font-size: 12px;
+    width: 80px;
+}
+
+.detail-table td {
+    padding: 6px 8px;
+}
+
+.total-row-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-top: 10px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.grand-total {
+    background: #e0e0e0;
+    font-size: 16px;
+}
+
+.total-label {
+    color: #333;
+}
+
+.total-value {
+    font-weight: 700;
+}
+
+.balance-badge {
+    text-align: center;
+    padding: 15px;
+    margin: 20px 0 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.balance-badge.balanced {
+    background-color: #eef2ff;
+    color: #000000;
+    border: 1px solid #c7d2fe;
+}
+
+.balance-badge.unbalanced {
+    background-color: var(--rp-warn-bg);
+    color: var(--rp-warn);
+    border: 1px solid #fed7aa;
+}
+
+/* reports.css */
+.reports-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reports-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.export-excel-btn,
+.export-pdf-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.export-excel-btn {
+    background: #15332c;
+    color: white;
+}
+
+.export-excel-btn:hover:not(:disabled) {
+    background: #0e221d;
+}
+
+.export-pdf-btn {
+    background: #15332c;
+    color: white;
+}
+
+.export-pdf-btn:hover:not(:disabled) {
+    background: #0e221d;
+}
+
+/* CashFlow: nilai bersih (tanpa merah/hijau) */
+.positive-value {
+    color: #000000;
+    font-weight: 700;
+}
+
+.negative-value {
+    color: var(--rp-warn);
+    font-weight: 700;
+}
+
+.export-excel-btn:disabled,
+.export-pdf-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.report-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Memastikan kolom nominal tetap terbaca */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reports-container {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    .reports-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .reports-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reports-filter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .reports-filter input {
+        width: 100%;
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .export-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .export-excel-btn, .export-pdf-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    .report-card {
+        padding: 15px;
+        overflow-x: hidden;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .summary-row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .summary-value {
+        font-size: 20px;
+    }
+}

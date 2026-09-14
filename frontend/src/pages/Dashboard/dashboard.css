@@ -1,0 +1,271 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* FILTER KALENDER */
+.calendar-filter {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.calendar-input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-family: inherit;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.calendar-input:focus {
+    border-color: #6366f1;
+}
+
+.reset-filter-btn {
+    padding: 8px 16px;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #166534;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-filter-btn:hover {
+    background: #166534;
+    color: white;
+}
+
+.dashboard-section-header {
+    margin: 30px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.dashboard-section-header h3 {
+    font-size: 1rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-cards.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+}
+
+.summary-card h4 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.summary-card .amount {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* COLORS & BORDERS */
+.summary-card.income { border-left: 5px solid #2e7d32; }
+.summary-card.expense { border-left: 5px solid #c62828; }
+.summary-card.net-profit { border-left: 5px solid #0284c7; background: #f0f9ff; }
+.summary-card.cash { border-left: 5px solid #f59e0b; }
+.summary-card.assets { border-left: 5px solid #6366f1; }
+.summary-card.liabilities { border-left: 5px solid #ef4444; }
+.summary-card.equity { border-left: 5px solid #10b981; }
+
+.profit-text { color: #166534 !important; }
+.loss-text { color: #991b1b !important; }
+
+/* CHART */
+.dashboard-chart {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-placeholder {
+    height: 200px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+}
+
+/* INSIGHT */
+.dashboard-insight {
+    background: #eef2ff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.dashboard-insight ul {
+    padding-left: 18px;
+}
+
+/* TRANSACTIONS */
+.dashboard-transactions table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.dashboard-transactions th,
+.dashboard-transactions td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-transactions th {
+    background: #f9fafb;
+}
+
+.dashboard-transactions .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dashboard-transactions .badge-income {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dashboard-transactions .badge-expense {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.dashboard-transactions .badge-neutral {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.dashboard-transactions .badge-return {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.dashboard-transactions .income-text {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.dashboard-transactions .expense-text {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.dashboard-transactions .neutral-text {
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.dashboard-transactions .return-text {
+    color: #92400e;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        gap: 20px;
+    }
+
+    .dashboard-cards {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .summary-card {
+        padding: 16px;
+    }
+
+    .summary-card p {
+        font-size: 18px;
+    }
+
+    .dashboard-chart, .dashboard-insight, .dashboard-transactions {
+        padding: 15px;
+    }
+
+    .dashboard-transactions table {
+        font-size: 13px;
+        min-width: 500px; /* Memastikan kolom tetap terbaca, user tinggal scroll horizontal */
+    }
+
+    .dashboard-chart h4, .dashboard-transactions h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-business-info .business-badge {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .dashboard-filter select {
+        width: 100%;
+    }
+}

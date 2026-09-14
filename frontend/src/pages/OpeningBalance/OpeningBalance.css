@@ -1,0 +1,502 @@
+/* ============================================
+   ATUR SALDO AWAL PAGE
+   ============================================ */
+
+.opening-balance-page {
+    padding: 0; /* Remove padding here, use global .content padding or specific mobile padding */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family:'Oswald', sans-serif; 
+}
+
+.opening-balance-page h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.ob-subtitle {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+/* ---- LAYOUT ---- */
+.ob-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 860px) {
+    .ob-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- FORM CARD ---- */
+.ob-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 20px;
+}
+
+.ob-form-card h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.ob-form-group {
+    margin-bottom: 16px;
+}
+
+.ob-form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.ob-form-group input,
+.ob-form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.ob-form-group input:focus,
+.ob-form-group select:focus {
+    outline: none;
+    border-color: #26860e;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: #fff;
+}
+
+/* ---- SIDE TOGGLE ---- */
+.ob-side-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.ob-side-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #64748b;
+}
+
+.ob-side-btn:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+}
+
+.ob-side-btn.debit.active {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #059669;
+}
+
+.ob-side-btn.credit.active {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #dc2626;
+}
+
+.ob-hint {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-top: 6px;
+    display: block;
+}
+
+/* ---- SUBMIT BUTTON ---- */
+.ob-btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #235338, #235338);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-top: 8px;
+}
+
+.ob-btn-submit:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.ob-btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ob-list-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.ob-list-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.ob-list-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ob-badge-count {
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #dbeafe;
+}
+
+.ob-btn-delete-all {
+    padding: 7px 14px;
+    background: #fff;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ob-btn-delete-all:hover:not(:disabled) {
+    background: #fef2f2;
+    border-color: #dc2626;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+.ob-btn-delete-all:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---- EMPTY STATE ---- */
+.ob-empty {
+    text-align: center;
+    padding: 60px 24px;
+    color: #64748b;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 2px dashed #e2e8f0;
+}
+
+.ob-empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+.ob-empty p {
+    font-size: 0.95rem;
+    margin: 4px 0;
+}
+
+.ob-table-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+/* ---- BALANCE TABLE DESIGN (5 COLUMNS) ---- */
+.ob-list-fullwidth {
+    width: 100%;
+}
+
+.ob-balance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+}
+
+.ob-balance-table thead th {
+    background: #f8fafc;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 700;
+    color: #475569;
+    border-bottom: 2px solid #cbd5e1;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+}
+
+.ob-balance-table tbody td {
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+/* Kolom widths */
+.col-tgl { width: 40px; }
+.col-acc-d, .col-acc-c { width: 30%; font-weight: 500; }
+.col-amt-d, .col-amt-c { width: 15%; text-align: right; font-weight: 600; font-family: inherit; }
+.col-opsi { width: 40px; text-align: center; }
+
+/* Group Header */
+.ob-date-group-header td {
+    background: #f1f5f9;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 8px 15px !important;
+    border-bottom: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Row Styling */
+.ob-row-item {
+    border-bottom: 1px solid #f8fafc;
+    transition: background 0.2s;
+}
+
+.ob-row-item:hover {
+    background: #fcfdfe;
+}
+
+.ob-row-item.d-side .col-acc-d {
+    color: #0f172a;
+}
+
+.ob-row-item.c-side .col-acc-c {
+    color: #334155;
+    padding-left: 20px; /* Slight indent for visual hierarchy */
+}
+
+.ob-acc-code {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    margin-right: 4px;
+    font-family: monospace;
+}
+
+.ob-row-item.d-side .col-amt-d {
+    color: #059669; /* Greenish for Assets/Debit */
+}
+
+.ob-row-item.c-side .col-amt-c {
+    color: #dc2626; /* Redish for Liab/Credit */
+}
+
+/* Spacer */
+.ob-row-spacer td {
+    padding: 4px !important;
+    background: #fafafa;
+}
+
+/* Mini Delete Button */
+.ob-minibtn-del {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.ob-minibtn-del:hover {
+    color: #ef4444;
+}
+
+/* ---- LOADING & ERROR ---- */
+.ob-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 0.875rem;
+    padding: 60px 0;
+}
+
+.ob-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: ob-spin 0.8s linear infinite;
+}
+
+@keyframes ob-spin {
+    to { transform: rotate(360deg); }
+}
+
+.ob-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ob-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #059669;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+    animation: ob-fadein 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes ob-fadein {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- NO BUSINESS WARNING ---- */
+.ob-no-business {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 24px;
+    color: #92400e;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}/* ---- RESPONSIVE DESIGN ---- */
+@media (max-width: 1100px) {
+    .opening-balance-page {
+        padding: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .ob-layout {
+        grid-template-columns: 1fr; /* Stack vertically */
+        width: 100%;
+        gap: 20px;
+    }
+
+    .ob-form-card {
+        position: static;
+        margin-bottom: 20px;
+        max-width: 100%;
+        min-width: 0;
+    }
+    
+    .ob-list-card {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .opening-balance-page {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    .opening-balance-page h1 {
+        font-size: 1.3rem;
+    }
+
+    .ob-list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .ob-list-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .ob-balance-table {
+        font-size: 0.78rem;
+    }
+
+    .ob-balance-table thead th,
+    .ob-balance-table tbody td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ob-table-wrap {
+        margin: 0 -10px; /* Bleed for more space */
+        width: calc(100% + 20px);
+        border-radius: 0;
+    }
+
+    .ob-balance-table {
+        min-width: 650px; /* Maintain readability */
+    }
+
+    .ob-btn-submit {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .ob-form-card, .ob-list-card {
+        padding: 18px 15px;
+    }
+    
+    .ob-side-toggle {
+        flex-direction: column;
+    }
+}
