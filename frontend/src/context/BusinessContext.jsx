@@ -22,7 +22,8 @@ export const BusinessProvider = ({ children }) => {
     useEffect(() => {
         const path = location.pathname;
         // Halaman publik yang tidak membutuhkan login
-        if (path === '/' || path === '/login' || path === '/register' || path === '/panduan') {
+        const publicPaths = ['/', '/login', '/register', '/panduan', '/tim'];
+        if (publicPaths.includes(path)) {
             return;
         }
 
