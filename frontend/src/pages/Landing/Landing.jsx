@@ -235,8 +235,9 @@ function Landing() {
                         <a onClick={() => scrollTo("cara-kerja")}>Cara Kerja</a>
                         <a onClick={() => scrollTo("keunggulan")}>Keunggulan</a>
                         <a onClick={() => scrollTo("testimoni")}>Testimoni</a>
-                        <Link to="/tim">Tim</Link>
-                        <div className="lp-nav-cta">
+                        <Link to="/Tim">Tim Penelitian</Link>
+                        <Link to="/Panduan">Panduan</Link>
+                            <div className="lp-nav-cta">
                             <Link to="/login" className="lp-btn lp-btn-ghost">Masuk</Link>
                             <Link to="/register" className="lp-btn lp-btn-solid">Daftar Gratis</Link>
                         </div>
