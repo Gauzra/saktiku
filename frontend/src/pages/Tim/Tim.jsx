@@ -117,8 +117,7 @@ function Tim() {
                         Tim di Balik <span className="tm-gradient-text">SAKTIKU</span>
                     </h1>
                     <p>
-                        SAKTIKU dikembangkan melalui kolaborasi dosen,  dan mahasiswa, dan
-                        yang berkontribusi dalam mewujudkan solusi digital
+                        SAKTIKU dikembangkan oleh dosen, dan mahasiswa yang berkontribusi dalam mewujudkan solusi digital
                         untuk mendukung pencatatan keuangan dan akuntansi.
                     </p>
                 </div>
