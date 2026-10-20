@@ -20,6 +20,7 @@ import { GuideProvider } from "./context/GuideContext";
 import OpeningBalance from "./pages/OpeningBalance/OpeningBalance";
 import Panduan from "./pages/Panduan/Panduan";
 import Landing from "./pages/Landing/Landing";
+import Tim from "./pages/Tim/Tim";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
           </Route>
           <Route path="/panduan" element={<Panduan />} />
+          <Route path="/tim" element={<Tim />} />
         </Routes>
         </GuideProvider>
       </BusinessProvider>

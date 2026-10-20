@@ -235,6 +235,7 @@ function Landing() {
                         <a onClick={() => scrollTo("cara-kerja")}>Cara Kerja</a>
                         <a onClick={() => scrollTo("keunggulan")}>Keunggulan</a>
                         <a onClick={() => scrollTo("testimoni")}>Testimoni</a>
+                        <Link to="/tim">Tim</Link>
                         <div className="lp-nav-cta">
                             <Link to="/login" className="lp-btn lp-btn-ghost">Masuk</Link>
                             <Link to="/register" className="lp-btn lp-btn-solid">Daftar Gratis</Link>
@@ -577,6 +578,7 @@ function Landing() {
                         <div className="lp-footer-col">
                             <h4>Dukungan</h4>
                             <Link to="/panduan">Panduan Penggunaan</Link>
+                            <Link to="/tim">Tim Kami</Link>
                             <a href="mailto:hallo@saktiku.id">hallo@saktiku.id</a>
                         </div>
 

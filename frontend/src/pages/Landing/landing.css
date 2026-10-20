@@ -247,7 +247,7 @@
 }
 
 .lp-gradient-text {
-    background: linear-gradient(90deg, #e8c37e, #f5e3b3, #8eb69b);
+    background: linear-gradient(135deg, #f4d896, #d9b45f);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
