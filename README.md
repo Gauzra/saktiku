@@ -1,4 +1,4 @@
-# DOKUMENTASI SISTEM PKM (SAKTIKU)
+# SISTEM AKUNTANSI KEUANGAN TERINTEGRASI KHUSUS UMKM (SAKTIKU)
 
 ## 1. Deskripsi Proyek
 **Sistem Akuntansi Keuangan Terintegrasi Khusus UMKM** atau dengan nama brand **Saktiku** adalah aplikasi web akuntansi sederhana berbasis *double-entry bookkeeping*. Aplikasi ini dirancang untuk membantu maupun UMKM dalam melakukan pencatatan transaksi keuangan, mengelola siklus akuntansi dasar, serta menghasilkan laporan keuangan secara otomatis.
