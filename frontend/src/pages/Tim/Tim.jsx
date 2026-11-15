@@ -133,15 +133,13 @@ function Tim() {
                                 <h2>{group.title}</h2>
                             </div>
                             <div
-                                className={`tm-grid ${
-                                    group.members.some((m) => m.featured) ? "tm-grid-single" : ""
-                                }`}
+                                className={`tm-grid ${group.members.some((m) => m.featured) ? "tm-grid-single" : ""
+                                    }`}
                             >
                                 {group.members.map((m) => (
                                     <article
-                                        className={`tm-card ${
-                                            m.featured ? "tm-card-featured" : ""
-                                        }`}
+                                        className={`tm-card ${m.featured ? "tm-card-featured" : ""
+                                            }`}
                                         key={m.name}
                                     >
                                         <div className="tm-photo">
